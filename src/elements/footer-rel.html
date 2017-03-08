@@ -1,0 +1,45 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+
+<dom-module id="footer-rel">
+  <template>
+    <style>
+
+      :host {
+        display: flex;
+        border: 1px solid #e2e2e2;
+        color: #616161;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        margin: 24px 0;
+        overflow: auto;
+        overflow-y: hidden;
+        padding: 40px 0;
+      }
+
+    </style>
+
+    <div class="container">
+      Footer Rel
+    </div>
+  </template>
+
+  <script>
+
+    class FooterRel extends Polymer.Element {
+
+      static get is() { return 'footer-rel' }
+
+      constructor() {
+        super();
+      }
+    }
+
+    customElements.define(FooterRel.is, FooterRel);
+
+  </script>
+</dom-module>
+
