@@ -8,7 +8,6 @@
         display: flex;
         border-top: 1px solid #e2e2e2;
         border-bottom: 1px solid #e2e2e2;
-        color: #616161;
         -webkit-flex-wrap: wrap;
         -ms-flex-wrap: wrap;
         flex-wrap: wrap;
@@ -16,12 +15,67 @@
         overflow: auto;
         overflow-y: hidden;
         padding: 40px 0;
+        color: var(--footer-text-color);
+      }
+
+      .col {
+        min-height: 256px;
+        width: 50%;
+        height: 100%;
+        max-width: 333px;
+        position: relative;
+      }
+
+      ._col-heading {
+        -webkit-font-smoothing: antialiased;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 21px;
+        margin-bottom: 24px;
+      }
+
+      .-nav {
+        height: 100%;
+        min-height: 100%;
+        position: absolute;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: block;
+      }
+
+      a {
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+        border-bottom: 1px solid transparent;
+        color: #616161;
+        padding-bottom: 2px;
+        text-decoration: none;
+        transition: border-color .3s ease-out;
+      }
+
+      li:first-child {
+        margin-top: 0;
+      }
+
+      li {
+        display: list-item;
+        text-align: -webkit-match-parent;
       }
 
     </style>
 
-    <div class="container">
-      Footer Rel
+    <div class="col -first">
+      <h3 class="_col-heading">Explore Our Business</h3>
+      <ul class="-nav">
+        <li><a href="https://google.com/cloud" target="_blank">Google Cloud</a></li>
+        <li><a href="https://cloud.google.com" target="_blank">Google Cloud Platform</a></li>
+        <li><a href="https://gsuite.google.com" target="_blank">G Suite</a></li>
+        <li><a href="https://enterprise.google.com/maps/" target="_blank">Google Maps</a></li>
+        <li><a href="https://enterprise.google.com/chrome" target="_blank">Chrome</a></li>
+        <li><a href="https://enterprise.google.com/android/" target="_blank">Android</a></li>
+        <li><a href="https://www.google.com/edu/" target="_blank">Google for Education</a></li>
+      </ul>
     </div>
   </template>
 
