@@ -42,6 +42,7 @@
   ],
   "mediaQueries": {
     "xs": {
+      "min": "320px",
       "max": "639px"
     },
     "sm": {

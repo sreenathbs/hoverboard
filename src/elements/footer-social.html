@@ -13,15 +13,13 @@
 
       .title {
         -webkit-font-smoothing: antialiased;
-        color: #616161;
         display: inline-block;
         text-transform: uppercase;
       }
 
       h4 {
-        font-size: 16px;
-        font-weight: 500;
-        line-height: 1.1875;
+        font-size: 14px;
+        font-weight: 700;
         margin: 0;
       }
 
@@ -73,7 +71,7 @@
       }
 
       .social-group.blog {
-        padding-top: 8px;
+        padding-top: 10px;
       }
 
       .blog h4 {
@@ -89,6 +87,10 @@
         list-style-type: disc;
       }
 
+      .social-network .title {
+        padding-top: 10px;
+      }
+
       .nav-inline li {
         display: inline-block;
       }
@@ -99,7 +101,7 @@
         padding: 8px;
       }
 
-      @media only screen and (max-width: 850px) {
+      @media (max-width: {$ mediaQueries.sm.max $}) {
         :host  {
           margin: 0;
           padding: 26px;
@@ -108,6 +110,12 @@
 
         .social-group {
           margin-bottom: 22px;
+        }
+      }
+
+      @media (max-width: {$ mediaQueries.xs.min $}) {
+        .nav-inline li a {
+          padding: 0;
         }
       }
 
