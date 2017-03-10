@@ -55,6 +55,16 @@
         text-decoration: underline;
       }
 
+      @media (max-width: 811px) {
+        :host  {
+          margin: 0 10px 0 20px;
+          display: block;
+        }
+
+        .copyright {
+          margin-right: 30px;
+        }
+      }
     </style>
 
     <div class="nav-inline">
@@ -64,10 +74,10 @@
           class="gdg-logo"
           src="../../images/gdg-logo.svg"
           sizing="contain"
-          alt="GDG Lviv">
+          alt="{$ gdgName $}">
         </iron-image>
       </a>
-      <a class="cod" href="{$ codUrl $}" target="_blank" rel="noopener noreferrer">Code of Conduct</a>
+      <a class="cod" href="{$ codUrl $}" target="_blank" rel="noopener noreferrer">{$ codeOfConduct $}</a>
 
       <div class="copyright">
         &copy; 2017 Based on <a href="https://github.com/gdg-x/hoverboard" target="_blank" rel="noopener noreferrer">Project

@@ -3,22 +3,20 @@
 
 <dom-module id="footer-social">
   <template>
+    <style is="custom-style" include="shared-styles flex flex-alignment positioning"></style>
     <style>
-
       :host {
         display: flex;
         padding-left: 4px;
-        color: var(--footer-text-color);
-        font-weight: 500;
       }
 
       .title {
         -webkit-font-smoothing: antialiased;
         display: inline-block;
         text-transform: uppercase;
-      }
-
-      h4 {
+        font-weight: 500;
+        color: var(--footer-text-color);
+        font-family: 'Roboto', 'Noto', sans-serif;
         font-size: 14px;
         margin: 0;
       }
@@ -29,13 +27,11 @@
       }
 
       ul.nav-inline {
-        display: inline;
-        margin: 0 55px 0 4px;
-
+        padding-left: 10px;
       }
 
       .share-gplus {
-        height: 14px;
+        height: 30px;
         padding: 8px;
         width: 23px;
       }
@@ -54,22 +50,27 @@
         transition: border-color .3s ease-out;
       }
 
-
-      .social-group.email {
-        padding-top: 17px;
+      .social-group {
+        margin-right: 30px;
+        box-sizing: border-box;
       }
 
       .social-group.email h4 {
         padding-right: 0;
+        padding-top: 17px;
       }
 
       .social-group.email a {
-        border-bottom: 1px solid #616161;
+        border-bottom: 1px solid var(--footer-text-color);
         padding-bottom: 1px;
       }
 
       .social-group.blog {
         padding-top: 17px;
+      }
+
+      .social-group.social-networks {
+        padding-top: 5px;
       }
 
       .blog h4 {
@@ -92,22 +93,21 @@
       li a {
         display: inline-block;
         margin: 0;
-        padding: 8px;
+        padding: 5px;
       }
 
-      @media (max-width: {$ mediaQueries.sm.max $}) {
+      @media (max-width: 811px) {
         :host  {
-          margin: 0;
-          padding: 26px;
+          margin: 0 10px 0 20px;
           display: block;
         }
 
         .social-group {
-          margin-bottom: 22px;
+          margin-bottom: 12px;
         }
       }
 
-      @media (max-width: {$ mediaQueries.xs.min $}) {
+      @media (max-width: 320px) {
         .nav-inline li a {
           padding: 0;
         }

@@ -67,6 +67,29 @@
         text-decoration: underline;
       }
 
+      @media (max-width: 850px) {
+        .col {
+          width: 50%;
+        }
+      }
+
+      @media (max-width: 767px) {
+        :host {
+          margin: 0 10px 0 20px;
+        }
+
+        .col {
+          min-height: 220px;
+          width: 50%;
+        }
+
+        .col-heading {
+          font-size: 14px;
+          font-weight: 500;
+          margin-bottom: 18px;
+        }
+      }
+
     </style>
     {% for footerRel in footerRelBlock %}
       <div class="col">
