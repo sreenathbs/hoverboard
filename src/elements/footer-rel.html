@@ -3,33 +3,25 @@
 
 <dom-module id="footer-rel">
   <template>
-    <style is="custom-style" include="shared-styles flex flex-alignment positioning"></style>
+    <style is="custom-style" include="shared-styles flex flex-alignment"></style>
     <style>
 
       :host {
         border-top: 1px solid var(--border-light-color);
         border-bottom: 1px solid var(--border-light-color);
-        flex-wrap: wrap;
         margin: 15px 0px;
         overflow: auto;
         overflow-y: hidden;
         padding: 30px 0;
         color: var(--footer-text-color);
-        min-height: 200px;
         box-sizing: border-box;
-      }
-
-      .col {
-        box-sizing: border-box;
-        padding-right: 10px;
       }
 
       .col-heading {
         font-size: 18px;
         font-weight: 500;
         line-height: 21px;
-        margin-bottom: 24px;
-        margin-top: 0;
+        margin-bottom: 25px;
       }
 
       .nav {
@@ -40,7 +32,7 @@
 
       a {
         border-bottom: 1px solid transparent;
-        color: #616161;
+        color: var(--footer-text-color);
         padding-bottom: 2px;
         text-decoration: none;
         transition: border-color .3s ease-out;
@@ -48,7 +40,6 @@
 
       li {
         display: list-item;
-        text-align: -webkit-match-parent;
         line-height: 25px;
       }
 
@@ -58,13 +49,14 @@
 
       @media (max-width: 767px) {
         :host {
-          margin: 0 10px 0 20px;
+          margin: 0 20px 0 20px;
+          padding: 10px 0;
         }
 
         .col-heading {
           font-size: 14px;
-          margin-top: 20px;
-          margin-bottom: 15px;
+          margin-top: 25px;
+          margin-bottom: 10px;
         }
       }
 

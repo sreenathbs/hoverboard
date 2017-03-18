@@ -5,21 +5,18 @@
 
 <dom-module id="footer-social">
   <template>
-    <style is="custom-style" include="shared-styles flex flex-alignment positioning"></style>
+    <style is="custom-style" include="shared-styles flex flex-alignment"></style>
     <style>
       :host {
-        display: flex;
         padding-left: 4px;
         position: relative;
+        color: var(--footer-text-color);;
       }
 
       .title {
-        -webkit-font-smoothing: antialiased;
         display: inline-block;
         text-transform: uppercase;
         font-weight: 500;
-        color: var(--footer-text-color);
-        font-family: 'Roboto', 'Noto', sans-serif;
         font-size: 14px;
         margin: 0;
       }
@@ -31,6 +28,10 @@
 
       ul.nav-inline {
         padding-left: 10px;
+      }
+
+      .nav-inline li {
+        display: inline-block;
       }
 
       .share-gplus {
@@ -46,11 +47,8 @@
       a {
         display: inline-block;
         margin: 0;
-        -webkit-font-smoothing: antialiased;
-        border-bottom: 1px solid transparent;
         color: var(--footer-text-color);
         text-decoration: none;
-        transition: border-color .3s ease-out;
       }
 
       .social-group {
@@ -68,12 +66,16 @@
         padding-bottom: 1px;
       }
 
-      .social-group.blog {
-        padding-top: 17px;
-      }
-
       .social-group.social-networks {
         padding-top: 5px;
+      }
+
+      .social-group.social-networks ul {
+        list-style-type: disc;
+      }
+
+      .social-group.blog {
+        padding-top: 17px;
       }
 
       .blog h4 {
@@ -81,22 +83,8 @@
       }
 
       .blog a {
-        border-bottom: 1px solid #616161;
+        border-bottom: 1px solid var(--footer-text-color);
         padding-bottom: 1px;
-      }
-
-      .social-group.social-network ul {
-        list-style-type: disc;
-      }
-
-      .nav-inline li {
-        display: inline-block;
-      }
-
-      li a {
-        display: inline-block;
-        margin: 0;
-        padding: 5px;
       }
 
       .fab paper-fab {
@@ -120,26 +108,36 @@
 
       @media (max-width: 811px) {
         :host  {
-          margin: 0 10px 0 20px;
+          margin: 0 10px 0 10px;
           display: block;
         }
 
         .social-group {
-          margin-bottom: 12px;
+          margin-right: 0;
+          margin-bottom: 10px;
+          width: 100%;
+          padding-top: 0;
         }
 
-        .fab {
-          transform: translateY(-170px);
+        .social-group.blog,
+        .social-group.social-networks {
+          padding-top: 0;
         }
-      }
 
-      @media (max-width: 320px) {
+        .social-group.social-networks {
+          margin-bottom: -10px;
+        }
+
+        .email {
+          margin-bottom: 20px;
+        }
+
         .nav-inline li a {
           padding: 0;
         }
 
         .fab {
-          transform: translateY(-200px);
+          transform: translateY(-130px);
         }
       }
 
@@ -149,7 +147,7 @@
       <paper-fab class="back-to-top" icon="hoverboard:up" on-click="backToTop"></paper-fab>
     </div>
     <div class="social-group google-plus">
-      <h4 class="title">{$ share $}</h4>
+      <h4 class="title roboto-font">{$ share $}</h4>
       <div class="nav-inline">
           <a class="share-gplus" href="{$ gplusShareLink $}"  target="_blank" rel="noopener noreferrer">
             <paper-icon-button icon="hoverboard:gplus"></paper-icon-button>
@@ -158,14 +156,14 @@
     </div>
 
     <div class="social-group blog">
-      <h4 class="title">
+      <h4 class="title roboto-font">
         {$ followOur $}
         <a href="{$ blogLink $}" target="_blank" rel="noopener noreferrer">{$ blog $}</a>
       </h4>
     </div>
 
     <div class="social-group social-networks">
-      <h4 class="title">{$ followUs $} </h4>
+      <h4 class="title roboto-font">{$ followUs $} </h4>
       <ul class="nav-inline">
         {% for soc in socialNetwork %}
           <li>
@@ -178,7 +176,7 @@
     </div>
 
     <div class="social-group email">
-      <h4 class="title">
+      <h4 class="title roboto-font">
         <a aria-label="Email us" href="mailto:{$ mailto $}">{$ emailUs $}</a>
       </h4>
     </div>

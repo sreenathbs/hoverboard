@@ -4,12 +4,9 @@
 
 <dom-module id="footer-nav">
   <template>
-    <style>
+    <style is="custom-style" include="shared-styles flex flex-alignment"></style>
 
-      :host {
-        display: inline-block;
-        width: 100%;
-      }
+    <style>
 
       .nav-inline {
         list-style: none;
@@ -21,22 +18,18 @@
         margin: 10px 30px 0 0;
         height: 24px;
         width: 120px;
-        display: inline-block;
         float: left;
       }
 
       .copyright {
         margin-right: 0;
-        display: inline-block;
         padding: 15px 0 0 0;
         box-sizing: border-box;
         float: right;
-        text-align: right;
       }
 
       .cod {
         margin-right: 0;
-        display: inline-block;
         padding: 15px 0 0 0;
         float: left;
       }
@@ -58,17 +51,20 @@
       @media (max-width: 811px) {
         :host  {
           margin: 0 10px 0 20px;
-          display: block;
         }
 
         .copyright {
           text-align: center;
           width: 100%;
         }
+
+        .cod {
+          float: right;
+        }
       }
     </style>
 
-    <div class="nav-inline">
+    <div class="nav-inline" layout flex>
 
       <a href="{$ gdgLvivUrl $}" target="_blank" rel="noopener noreferrer">
         <iron-image
@@ -80,7 +76,7 @@
       </a>
       <a class="cod" href="{$ codUrl $}" target="_blank" rel="noopener noreferrer">{$ codeOfConduct $}</a>
 
-      <div class="copyright">
+      <div class="copyright" layout flex self-end>
         &copy; 2017 Based on <a href="https://github.com/gdg-x/hoverboard" target="_blank" rel="noopener noreferrer">Project
         Hoverboard</a>
       </div>
