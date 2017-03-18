@@ -32,7 +32,7 @@
         box-sizing: border-box;
       }
 
-      @media (min-width: {$ mediaQueries.sm.min $}) {
+      @media (min-width: 640px) {
         .container {
           padding: 15px 60px;
           box-sizing: border-box;
@@ -42,9 +42,9 @@
     </style>
 
     <div class="container">
-      <footer-social></footer-social>
-      <footer-rel></footer-rel>
-      <footer-nav></footer-nav>
+      <footer-social layout flex></footer-social>
+      <footer-rel layout flex horizontal></footer-rel>
+      <footer-nav  layout flex horizontal></footer-nav>
     </div>
   </template>
 
