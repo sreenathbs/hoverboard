@@ -1,5 +1,7 @@
 <link rel="import" href="../../bower_components/polymer/polymer-element.html">
 <link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../../bower_components/paper-fab/paper-fab.html">
+
 
 <dom-module id="footer-social">
   <template>
@@ -8,6 +10,7 @@
       :host {
         display: flex;
         padding-left: 4px;
+        position: relative;
       }
 
       .title {
@@ -96,6 +99,25 @@
         padding: 5px;
       }
 
+      .fab paper-fab {
+        transform: scale(1);
+        background: #fff;
+        color: inherit;
+        transition: transform 200ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 200ms cubic-bezier(0, 0, 0.2, 1);
+        will-change: transform;
+        pointer-events: all;
+        box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.12), 0px 8px 8px 0px rgba(0,0,0,0.24);
+      }
+
+      .fab {
+        transform: translateY(2px);
+        position: absolute;
+        right: 0;
+        bottom: 40px;
+        pointer-events: none;
+        z-index: 1;
+      }
+
       @media (max-width: 811px) {
         :host  {
           margin: 0 10px 0 20px;
@@ -105,16 +127,27 @@
         .social-group {
           margin-bottom: 12px;
         }
+
+        .fab {
+          transform: translateY(-170px);
+        }
       }
 
       @media (max-width: 320px) {
         .nav-inline li a {
           padding: 0;
         }
+
+        .fab {
+          transform: translateY(-200px);
+        }
       }
 
     </style>
 
+    <div class="fab">
+      <paper-fab class="back-to-top" icon="hoverboard:up" on-click="backToTop"></paper-fab>
+    </div>
     <div class="social-group google-plus">
       <h4 class="title">{$ share $}</h4>
       <div class="nav-inline">
@@ -160,6 +193,17 @@
 
       constructor() {
         super();
+      }
+
+      backToTop(e) {
+        var scrollDuration = 500;
+        var scrollStep = -window.scrollY / (scrollDuration / 15),
+          scrollInterval = setInterval(function(){
+            if ( window.scrollY != 0 ) {
+              window.scrollBy( 0, scrollStep );
+            }
+            else clearInterval(scrollInterval);
+          },15);
       }
     }
 

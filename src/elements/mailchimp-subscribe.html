@@ -8,17 +8,15 @@
 
     <style>
       :host {
-        display: block;
-        width: 100%;
-        --paper-input-container-color: var(--default-primary-color);
+        --paper-input-container-color: var(--footer-text-color);
         --paper-input-container-focus-color: var(--default-primary-color);
-        --paper-input-container-input-color: var(--default-primary-color);
+        --paper-input-container-input-color: var(--footer-text-color);
       }
 
-      paper-input-container {
+      paper-input {
         padding-bottom: 0;
       }
-      paper-input-container,
+      paper-input,
       .mc-embedded-subscribe-form {
         width: 100%;
       }
@@ -26,10 +24,15 @@
       paper-input-container label {
         font-size: 14px;
       }
+
       .subscribe-button {
         margin-top: 5px;
         margin-right: 0;
         text-transform: uppercase;
+      }
+
+      paper-button:hover {
+        cursor: pointer;
       }
     </style>
 
@@ -44,8 +47,8 @@
         rel="noopener noreferrer"
         novalidate>
         <div class="mc-field-group" layout vertical flex>
-          <paper-input label="{$ yourEmail $}">
-            <iron-icon icon="hoverboard:email" prefix></iron-icon>
+          <paper-input label="{$ yourEmail $}" name="EMAIL" id="mce-EMAIL" autocomplete="off" no-label-float>
+            <iron-icon icon="mail" prefix></iron-icon>
           </paper-input>
           <paper-button class="subscribe-button" on-click="submitForm" layout flex self-end>{$ subscribe $}</paper-button>
         </div>
